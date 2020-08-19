@@ -1,3 +1,8 @@
+
+provider "aws" {
+
+ region = "us-east-1"
+}
 # Crawler resource policies:
 
 # Crawler IAM role
