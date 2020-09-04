@@ -16,7 +16,7 @@ variable "crawler_description" {
 
 variable "table_prefix" {
   description = "Table Prefix"
-  default = "sw_dl_crawler_"
+  type = "string"
 }
 
 variable "schedule" {
