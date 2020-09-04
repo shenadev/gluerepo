@@ -6,12 +6,12 @@
  }
 # Crawler
 variable "crawler_name" {
-    default = "sw_dl_crawler"
+      type = "string"
 }
 
 variable "crawler_description" {
   description = "Crawler Description"
-  default = "Managed by this guy"
+  type = "string"
 }
 
 variable "table_prefix" {
@@ -21,5 +21,5 @@ variable "table_prefix" {
 
 variable "schedule" {
   description = "Schedule, a cron expresion in form of cron(15 12 * * ? *) "
-  default = "cron(0 * * * ? *)"
+  type = "string"
 }
