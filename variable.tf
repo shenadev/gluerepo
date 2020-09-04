@@ -2,7 +2,7 @@
 # DB
  variable "glue_db_name" {
      description = "Name the Glue Database"
-     default = "sw_dl_database"
+    type = "string"
  }
 # Crawler
 variable "crawler_name" {
