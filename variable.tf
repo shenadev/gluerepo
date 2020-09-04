@@ -21,5 +21,5 @@ variable "table_prefix" {
 
 variable "schedule" {
   description = "Schedule, a cron expresion in form of cron(15 12 * * ? *) "
-  type = "string"
+  default = "cron(15 12 * * ? *)"
 }
