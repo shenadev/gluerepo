@@ -1,9 +1,7 @@
 pipeline {
     agent any
     
-    parameters { 
-        string(defaultValue: '', description: '', name: 'glue_db_name', trim: false)
-    }
+    properties([parameters([string(defaultValue: '', description: '', name: 'glue_db_name', trim: false)])])
     stages {
         
         
@@ -22,7 +20,7 @@ pipeline {
             steps {
             
             sh label: '', script: '''
-terraform plan -var glue_db_name=${params.glue_db_name} '''
+terraform plan -var glue_db_name=$glue_db_name '''
             }
         }
     }
