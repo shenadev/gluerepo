@@ -2,21 +2,21 @@
 # DB
  variable "glue_db_name" {
      description = "Name the Glue Database"
-    type = "string"
+     default = "demo"
  }
 # Crawler
 variable "crawler_name" {
-      type = "string"
+      default = "demo1"
 }
 
 variable "crawler_description" {
   description = "Crawler Description"
-  type = "string"
+  default = "demo2"
 }
 
 variable "table_prefix" {
   description = "Table Prefix"
-  type = "string"
+  default = "demo3"
 }
 
 variable "schedule" {
