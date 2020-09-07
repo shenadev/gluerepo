@@ -23,8 +23,8 @@ pipeline {
 terraform plan -var ${params.glue_db_name} '''
             }
         }
-    }
     
-}
+    
+
     }
 }
