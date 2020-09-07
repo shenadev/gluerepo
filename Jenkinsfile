@@ -1,13 +1,30 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
+        string(name: 'glue_db_name', defaultValue: 'Hello', description: 'How should I greet the world?')
     }
+ 
     stages {
-        stage('Example') {
+        
+        stage('checkout') {
             steps {
-                echo "${params.Greeting} World!"
+             git 'https://github.com/cjpcloud/gluerepo.git'
             }
         }
+        stage('terraform init') {
+            steps {
+             sh label: '', script: 'terraform init'
+            }
+        }
+        stage('terraform plan') {
+            steps {
+            
+            sh label: '', script: '''
+terraform plan -var ${glue_db_name} '''
+            }
+        }
+    }
+    
+}
     }
 }
