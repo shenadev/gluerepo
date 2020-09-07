@@ -18,7 +18,7 @@ pipeline {
             steps {
             
             sh label: '', script: '''
-terraform plan -var '''
+terraform plan  '''
             }
         }
     }
