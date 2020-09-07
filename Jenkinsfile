@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'glue_db_name', defaultValue: 'Hello', description: 'How should I greet the world?')
+        string(name: 'glue_db_name', defaultValue: '', description: 'How should I greet the world?')
     }
  
     stages {
