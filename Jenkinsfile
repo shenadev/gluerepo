@@ -1,11 +1,11 @@
 pipeline {
     agent any
     
-    properties([parameters([string(defaultValue: '', description: '', name: 'glue_db_name', trim: false)])])
+    
     stages {
         
         
-        
+        properties([parameters([string(defaultValue: '', description: '', name: 'glue_db_name', trim: false)])])
         stage('checkout') {
             steps {
              git 'https://github.com/cjpcloud/gluerepo.git'
