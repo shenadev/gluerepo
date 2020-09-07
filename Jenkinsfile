@@ -16,7 +16,12 @@ pipeline {
              sh label: '', script: 'terraform init'
             }
         }
-       
+        stage('terraform plan') {
+            steps {
+            
+                echo "${params.glue_db_name} mahesh"           
+            }
+        }
     
     
 
