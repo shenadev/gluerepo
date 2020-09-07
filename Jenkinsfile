@@ -20,7 +20,7 @@ pipeline {
             steps {
             
             sh label: '', script: '''
-terraform plan -var ${params.glue_db_name} '''
+terraform plan -var glue_db_name=${params.glue_db_name} '''
             }
         }
     
