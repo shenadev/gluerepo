@@ -16,13 +16,7 @@ pipeline {
              sh label: '', script: 'terraform init'
             }
         }
-        stage('terraform plan') {
-            steps {
-            
-            sh label: '', script: '''
-terraform plan -var glue_db_name=${params.glue_db_name} '''
-            }
-        }
+       
     
     
 
