@@ -19,7 +19,7 @@ pipeline {
         stage('terraform plan') {
             steps {
             
-                echo "${params.glue_db_name} mahesh"           
+                sh label: '', script: 'terraform plan -var glue_db_name=${params.glue_db_name}'     
             }
         }
     
