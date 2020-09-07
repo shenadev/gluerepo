@@ -4,7 +4,10 @@ pipeline {
         
              
         parameters {
-            string(defaultValue: '', description: '', name: 'glue_db_name', trim: false), string(defaultValue: '', description: '', name: 'crawler_name', trim: false), string(defaultValue: '', description: '', name: 'crawler_description', trim: false), string(defaultValue: '', description: '', name: 'table_prefix', trim: false)
+            string(name: 'glue_db_name', defaultValue: 'Hello', description: 'How should I greet the world?')
+            string(name: 'table_prefix', defaultValue: 'Hello', description: 'How should I greet the world?') 
+            string(name: 'crawler_name', defaultValue: 'Hello', description: 'How should I greet the world?')
+            string(name: 'crawler_description', defaultValue: 'Hello', description: 'How should I greet the world?') 
         }
         stage('checkout') {
             steps {
@@ -20,7 +23,7 @@ pipeline {
             steps {
             
             sh label: '', script: '''
-terraform plan -var glue_db_name=$glue_db_name -var  crawler_description=$crawler_description -var table_prefix=$table_prefix -var crawler_name=$crawler_name '''
+terraform plan -var glue_db_name=${params.glue_db_name} -var  crawler_description=${params.crawler_description} -var table_prefix=${params.table_prefix} -var crawler_name=${params.crawler_name} '''
             }
         }
     }
