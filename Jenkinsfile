@@ -8,7 +8,7 @@ pipeline {
         
         stage('checkout') {
             steps {
-             git 'https://github.com/cjpcloud/gluerepo.git'
+             git credentialsId: 'ab45fcb1-d309-4603-b00c-7f69cfda2c9b', url: 'https://github.com/shenadev/gluerepo.git'
             }
         }
         stage('terraform init') {
